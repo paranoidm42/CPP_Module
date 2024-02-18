@@ -14,10 +14,11 @@ int main()
 {
 	std::string res;
 	PhoneBook phonebook;
+
 	ScreenPut();
 	while (1)
 	{
-		std::cout << "> ";
+		std::cout << "|--> ";
 		std::getline(std::cin , res);
 
 		if(res == "ADD" || res == "add")

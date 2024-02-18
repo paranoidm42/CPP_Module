@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 
+
 PhoneBook::PhoneBook()
 {
 	this->index = 0;
@@ -30,6 +31,20 @@ void PhoneBook::PutStrWithDot(std::string text)
 		std::cout << "|" << std::setw(10) << text.substr(0,10);
 }
 
+void PhoneBook::WritePerson(Connact contact)
+{
+	std::cout   << "|--------------All Info Display---------------------------|\n"
+	       		<< "|    First Name| Last Name|  Nickname| DarkSecret| Number |\n"
+	       		<< "|---------------------------------------------------------|\n"
+				<< std::endl;
+	PutStrWithDot(contact.getName());
+	PutStrWithDot(contact.getSurname());
+	PutStrWithDot(contact.getNickname());
+	PutStrWithDot(contact.getDarkSecret());
+	PutStrWithDot(contact.getPhonenumber());
+	std::cout << std::endl;
+}
+
 int PhoneBook::add()
 {
 	std::string input[5];
@@ -58,39 +73,46 @@ int PhoneBook::add()
 
 int PhoneBook::search()
 {
+	std::string s_index;
+	int i_index;
 
-	int s_index;
-    std::cout   << "|--------------Contact Display--------------|\n"
-                << "|-------------------------------------------|\n"
-	            << "|     Index|First Name| Last Name|  Nickname|\n"
-	            << "|-------------------------------------------|\n";
-    for (int i = 0; i <= this->size ; i++)
+	if(!this->size)
+	{
+		std::cout << "There is no one here, you need to add someone!! " << std::endl;
+		return (0);
+	}
+    std::cout << "/------------------------------------------\\" << std::endl;
+    std::cout << "|                                          |" << std::endl;
+    std::cout << "|              CONTACT LIST                |" << std::endl;
+    std::cout << "|                                          |" << std::endl;
+    std::cout << "|---------|----------|----------|----------|" << std::endl;
+    std::cout << "|  index  |first name| last name| nickname |" << std::endl;
+    std::cout << "|---------|----------|----------|----------|" << std::endl;
+    for (int i = 0; i < this->size ; i++)
     {
 		std::cout << "|" << std::setw(10) << i;
 		PutStrWithDot(this->contact[i].getName());
 		PutStrWithDot(this->contact[i].getSurname());
 		PutStrWithDot(this->contact[i].getNickname());
         std::cout << '|' << std::endl;
+		std::cout << "-------------------------------------------$" << std::endl;
     }
-	std::cout << "Make your chosse :> ";
-	std::cin >> s_index;
-	std::cout << std::endl;
-	if (s_index > this->size || !this->size )
-	{
-		std::cout << "There is no an Alien!!!";
-		return 0;
-	}
 
-	std::cout   << "|--------------All Info Display---------------------------|\n"
-	       		<< "|    First Name| Last Name|  Nickname| DarkSecret| Number |\n"
-	       		<< "|---------------------------------------------------------|\n"
-				<< std::endl;
-	PutStrWithDot(this->contact[s_index].getName());
-	PutStrWithDot(this->contact[s_index].getSurname());
-	PutStrWithDot(this->contact[s_index].getNickname());
-	PutStrWithDot(this->contact[s_index].getDarkSecret());
-	PutStrWithDot(this->contact[s_index].getPhonenumber());
+	do
+	{
+		std::cout << "İndex |-> ";
+		std::getline(std::cin, s_index);
+		if(s_index.empty())
+			std::cout <<  "It can not null. Try again!! " << std::endl;
+	} while (s_index.empty());
+
+	std::istringstream iss(s_index);
+	iss >> i_index;
 	std::cout << std::endl;
+	if (i_index >= this->size || iss.fail())
+		std::cout << "there is no this index or it is not number" << std::endl;
+	else
+		WritePerson(this->contact[i_index]);
 
 	return 0;
 }

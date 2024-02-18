@@ -3,6 +3,7 @@
 
 #include <iomanip>
 #include <string>
+#include <sstream>
 #include <cctype>
 #include "Connact.hpp"
 
@@ -19,6 +20,7 @@ class PhoneBook
 		int search();
 		void PutStrWithDot(std::string text);
 		std::string get_return(std::string text);
+		void WritePerson(Connact contact);
 };
 
 #endif
