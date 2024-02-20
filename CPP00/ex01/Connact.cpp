@@ -8,7 +8,7 @@ Connact::Connact()
 
 Connact::~Connact()
 {
-	
+
 }
 
 void Connact::setName(std::string name)
@@ -23,7 +23,7 @@ void Connact::setNickname(std::string nickname)
 {
 	this->Nickname = nickname;
 }
-void Connact::setPhonenumber(std::string phonenumber)
+void Connact::setPhonenumber(int phonenumber)
 {
 	this->PhoneNumber = phonenumber;
 }
@@ -45,7 +45,7 @@ std::string Connact::getNickname()
 	return this->Nickname;
 }
 
-std::string Connact::getPhonenumber()
+int Connact::getPhonenumber()
 {
 	return this->PhoneNumber;
 }

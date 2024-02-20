@@ -3,6 +3,7 @@
 
 void ScreenPut()
 {
+	std::cout << std::endl;
     std::cout << "|-----------WELCOME GALACTİC PHONEBOOK☎📔----------|" << std::endl;
     std::cout << "|                        1-ADD                          |" << std::endl;
     std::cout << "|                        2-SEARCH                       |" << std::endl;
@@ -22,7 +23,11 @@ int main()
 		std::getline(std::cin , res);
 
 		if(res == "ADD" || res == "add")
+		{
 			phonebook.add();
+			ScreenPut();
+
+		}
 		else if (res == "SEARCH" || res == "search")
 			phonebook.search();
 		else if(res == "EXIT" || res == "exit")
