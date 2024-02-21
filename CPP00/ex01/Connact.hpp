@@ -9,7 +9,7 @@ class Connact
 		std::string Name;
 		std::string Surname;
 		std::string Nickname;
-		int PhoneNumber;
+		long PhoneNumber;
 		std::string DarkSecret;
 	public:
 		Connact();
@@ -17,12 +17,12 @@ class Connact
 		void setName(std::string name);
 		void setSurname(std::string surname);
 		void setNickname(std::string nickname);
-		void setPhonenumber(int phonenumber);
+		void setPhonenumber(long phonenumber);
 		void setDarkSecret(std::string darksecret);
 		std::string getName();
 		std::string getSurname();
 		std::string getNickname();
-		int getPhonenumber();
+		long getPhonenumber();
 		std::string	getDarkSecret();
 };
 

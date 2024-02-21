@@ -28,10 +28,10 @@ std::string PhoneBook::get_return(std::string text)
 
 void PhoneBook::PutStrWithDot(std::string text)
 {
-	if(text.length() > 10)
-		std::cout << "|" << std::setw(10) << text.substr(0,9) << ".";
-	else
-		std::cout << "|" << std::setw(10) << text.substr(0,10);
+    if (text.length() >= 10)
+        std::cout << "|" << std::setw(10) << text.substr(0, 9) << ".";
+    else
+        std::cout << "|" << std::setw(10) << text.substr(0, 10);
 }
 
 void PhoneBook::WritePerson(Connact contact)
@@ -92,17 +92,16 @@ int PhoneBook::search()
 		std::cout << "There is no one here, you need to add someone!! " << std::endl;
 		return (0);
 	}
-    std::cout << "/------------------------------------------\\" << std::endl;
-    std::cout << "|              CONTACT LIST                |" << std::endl;
-    std::cout << "|  index  |first name| last name| nickname |" << std::endl;
-    std::cout << "|---------|----------|----------|----------|" << std::endl;
+	std::cout << " ___________________________________________ " << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "|----------|----------|----------|----------|" << std::endl;
     for (int i = 0; i < this->size ; i++)
     {
 		std::cout << "|" << std::setw(10) << i;
 		PutStrWithDot(this->contact[i].getName());
 		PutStrWithDot(this->contact[i].getSurname());
 		PutStrWithDot(this->contact[i].getNickname());
-        std::cout << '|' << std::endl;
+		std::cout << "|" << std::endl;
     }
 
 	do
