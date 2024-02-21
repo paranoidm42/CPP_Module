@@ -36,8 +36,8 @@ void PhoneBook::PutStrWithDot(std::string text)
 
 void PhoneBook::WritePerson(Connact contact)
 {
-	std::cout   << "|--------------All Info Display---------------------------|\n"
-	       		<< "|    First Name| Last Name|  Nickname| DarkSecret| Number |\n"
+	std::cout   << "|-------------------All Info Display----------------------|\n"
+	       		<< "|First Name| Last Name|  Nickname| DarkSecret|  Number     |\n"
 	       		<< "|---------------------------------------------------------|\n"
 				<< std::endl;
 	PutStrWithDot(contact.getName());
@@ -53,7 +53,8 @@ void PhoneBook::WritePerson(Connact contact)
 int PhoneBook::add()
 {
 	std::string input[5];
-	int num;
+	long num;
+
 	input[0] = get_return("Name: ");
 	input[1] = get_return("Surname: ");
 	input[2] = get_return("Nickname: ");
@@ -102,7 +103,6 @@ int PhoneBook::search()
 		PutStrWithDot(this->contact[i].getSurname());
 		PutStrWithDot(this->contact[i].getNickname());
         std::cout << '|' << std::endl;
-		std::cout << "-------------------------------------------" << std::endl;
     }
 
 	do
