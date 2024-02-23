@@ -24,6 +24,7 @@ class Connact
 		std::string getNickname();
 		long getPhonenumber();
 		std::string	getDarkSecret();
+		std::string Name;
 };
 
 
