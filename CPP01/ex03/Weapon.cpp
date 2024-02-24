@@ -3,6 +3,12 @@
 
 Weapon::Weapon()
 {
+
+}
+
+Weapon::Weapon(std::string type)
+{
+	this->setType(type);
 }
 
 Weapon::~Weapon()
