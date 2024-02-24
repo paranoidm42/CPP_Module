@@ -23,15 +23,13 @@ int main()
 		std::getline(std::cin , res);
 
 		if(res == "ADD" || res == "add")
-		{
 			phonebook.add();
-			ScreenPut();
-
-		}
 		else if (res == "SEARCH" || res == "search")
 			phonebook.search();
 		else if(res == "EXIT" || res == "exit")
 			break;
+		std::cout << std::endl;
+		ScreenPut();
 	}
 	return (0);
 }

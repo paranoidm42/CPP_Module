@@ -23,7 +23,7 @@ void Connact::setNickname(std::string nickname)
 {
 	this->Nickname = nickname;
 }
-void Connact::setPhonenumber(int phonenumber)
+void Connact::setPhonenumber(long phonenumber)
 {
 	this->PhoneNumber = phonenumber;
 }
@@ -45,7 +45,7 @@ std::string Connact::getNickname()
 	return this->Nickname;
 }
 
-int Connact::getPhonenumber()
+long Connact::getPhonenumber()
 {
 	return this->PhoneNumber;
 }
