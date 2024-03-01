@@ -5,12 +5,12 @@
 #include <string>
 #include <sstream>
 #include <cctype>
-#include "Connact.hpp"
+#include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
-		Connact contact[8];
+		Contact contact[8];
 		int index;
 		int size;
 	public:
@@ -20,7 +20,7 @@ class PhoneBook
 		int search();
 		void PutStrWithDot(std::string text);
 		std::string get_return(std::string text);
-		void WritePerson(Connact contact);
+		void WritePerson(Contact contact);
 };
 
 #endif

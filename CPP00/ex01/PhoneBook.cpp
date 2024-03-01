@@ -34,7 +34,7 @@ void PhoneBook::PutStrWithDot(std::string text)
         std::cout << "|" << std::setw(10) << text.substr(0, 10);
 }
 
-void PhoneBook::WritePerson(Connact contact)
+void PhoneBook::WritePerson(Contact contact)
 {
 	std::cout   << "|-------------------All Info Display----------------------|\n"
 	       		<< "|First Name| Last Name|  Nickname| DarkSecret|  Number     |\n"

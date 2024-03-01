@@ -1,9 +1,9 @@
-#ifndef CONNACT
-# define CONNACT
+#ifndef CONTACT
+# define CONTACT
 
 #include <iostream>
 
-class Connact
+class Contact
 {
 	private:
 		std::string Name;
@@ -12,8 +12,8 @@ class Connact
 		long PhoneNumber;
 		std::string DarkSecret;
 	public:
-		Connact();
-		~Connact();
+		Contact();
+		~Contact();
 		void setName(std::string name);
 		void setSurname(std::string surname);
 		void setNickname(std::string nickname);
@@ -24,8 +24,6 @@ class Connact
 		std::string getNickname();
 		long getPhonenumber();
 		std::string	getDarkSecret();
-		std::string Name;
 };
-
 
 #endif
