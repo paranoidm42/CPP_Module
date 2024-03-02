@@ -8,15 +8,12 @@ int main(int argc, char* argv[]) {
 	if (argc != 4)
 	    return std::cerr << "Usage: <program> <filename> <s1> <s2>" <<  std::endl, 0;
 
-	std::ifstream i_input;
-	std::ofstream o_output;
-	std::string outputFilename = std::string(argv[1]) + ".replace";
-
-	i_input.open(argv[1]);
+	std::ifstream i_input(argv[1]);
 	if(!i_input.is_open())
 		return std::cerr << "File error!!" << std::endl, 0;
 
-	o_output.open(outputFilename.c_str());
+	std::string outputFilename = std::string(argv[1]) + ".replace";
+	std::ofstream o_output(outputFilename.c_str());
 	if(!o_output.is_open())
 		return std::cerr << "File error!!" << std::endl, 0;
 
@@ -38,3 +35,5 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
+
