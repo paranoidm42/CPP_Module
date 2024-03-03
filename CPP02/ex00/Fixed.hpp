@@ -6,7 +6,7 @@
 class Fixed
 {
 private:
-	static const int _staticInteger = 0;
+	static const int _staticInteger = 8;
 	int _integerValue;
 public:
 	Fixed();
