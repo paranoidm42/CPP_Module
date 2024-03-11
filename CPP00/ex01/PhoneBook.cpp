@@ -40,10 +40,9 @@ std::string PhoneBook::get_return(std::string text)
 
 void PhoneBook::WritePerson(Contact contact)
 {
-	std::cout   << "|-------------------All Info Display-------------------|\n"
-	       		<< "|First Name| Last Name|  Nickname|DarkSecret|  Number  |\n"
-	       		<< "|------------------------------------------------------|\n"
-				<< std::endl;
+	std::cout   << "|-------------------All Info Display-------------------|" << std::endl
+	       		<< "|First Name| Last Name|  Nickname|DarkSecret|  Number  |" << std::endl
+	       		<< "|------------------------------------------------------|" << std::endl;
 	PutStrWithDot(contact.getName());
 	PutStrWithDot(contact.getSurname());
 	PutStrWithDot(contact.getNickname());

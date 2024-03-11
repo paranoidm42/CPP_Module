@@ -4,7 +4,7 @@
 void ScreenPut()
 {
 	std::cout << std::endl;
-    std::cout << "|-----------WELCOME GALACTİC PHONEBOOK☎📔----------|" << std::endl;
+    std::cout << "|-----------WELCOME GALACTİC PHONEBOOK☎📔---------------|" << std::endl;
     std::cout << "|                        1-ADD                          |" << std::endl;
     std::cout << "|                        2-SEARCH                       |" << std::endl;
     std::cout << "|                        3-EXIT                         |" << std::endl;
