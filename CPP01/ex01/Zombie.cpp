@@ -6,6 +6,7 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
+	std::cout << this->Name <<  " İt was dead" << std::endl;
 }
 
 void Zombie::announce()

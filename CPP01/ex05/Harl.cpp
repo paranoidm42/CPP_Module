@@ -28,18 +28,18 @@ void	Harl::error( void )
 }
 void Harl::complain(std::string level)
 {
-    std::string av[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    const char* av[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int i;
-    void (Harl::*func[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    void (Harl::*command[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    i = 0;
-    while (i < 4) {
-        if (std::find(av, av + 4, level) != av + 4)
-		{
-            (this->*func[i])();
+    for (i = 0; i < 4; ++i)
+    {
+        if (strcmp(level.c_str(), av[i]) == 0)
+        {
+            (this->*command[i])();
             return;
         }
-        i++;
     }
+
     std::cerr << "[ ERROR ]\n" << "Just use: \"DEBUG\", \"INFO\", \"WARNING\" or \"ERROR\"" << std::endl;
 }

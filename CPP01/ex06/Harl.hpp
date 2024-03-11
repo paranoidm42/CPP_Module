@@ -1,3 +1,7 @@
+#ifndef HARL
+#define HARL
+
+
 #include <iostream>
 #include <algorithm>
 
@@ -14,3 +18,4 @@ class Harl
 		~Harl();
 };
 
+#endif

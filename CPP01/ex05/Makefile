@@ -7,7 +7,7 @@ SOURCES	= $(wildcard *.cpp)
 
 all		: $(NAME)
 
-$(NAME)	:
+$(NAME)	: $(SOURCES)
 	$(CC) $(CFLAGS) $(SOURCES) -o $(NAME)
 
 clean	:
@@ -16,3 +16,5 @@ clean	:
 fclean	: clean
 
 re		: fclean all
+
+.PHONY: all clean fclean re
