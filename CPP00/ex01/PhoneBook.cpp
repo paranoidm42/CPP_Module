@@ -81,7 +81,7 @@ int PhoneBook::add()
 	this->contact[this->index].setDarkSecret(input[3]);
 	this->contact[this->index].setPhonenumber(num);
 	this->index = (this->index + 1) % 9;
-	if (this->size <= 9)
+	if (this->size < 9)
 		size++;
 	return 0;
 }
