@@ -79,9 +79,9 @@ int PhoneBook::add()
 	this->contact[this->index].setNickname(input[2]);
 	this->contact[this->index].setDarkSecret(input[3]);
 	this->contact[this->index].setPhonenumber(num);
-	this->index = (this->index + 1) % 9;
-	if (this->size < 9)
-		size++;
+	this->index = (this->index + 1) % 8;
+	if (this->size < 8)
+		this->size++;
 	return 0;
 }
 
@@ -99,7 +99,7 @@ int PhoneBook::search()
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
     for (int i = 0; i < this->size ; i++)
     {
-		std::cout << "|" << std::setw(10) << i;
+		std::cout << "|" << std::setw(10) << i + 1;
 		PutStrWithDot(this->contact[i].getName());
 		PutStrWithDot(this->contact[i].getSurname());
 		PutStrWithDot(this->contact[i].getNickname());
@@ -114,12 +114,12 @@ int PhoneBook::search()
 		std::cout << std::endl;
 		if(s_index.empty())
 			std::cout <<  "It can not null. Try again!! " << std::endl;
-		else if (i_index >= this->size || i_index < 0 || iss.fail())
+		else if (i_index > this->size || i_index <= 0 || iss.fail())
 			std::cout << "there is no this index or it is not number" << std::endl;
 		else
 		{
 			std::cout << std::endl;
-			WritePerson(this->contact[i_index]);
+			WritePerson(this->contact[i_index - 1]);
 			break;
 		}
 	} while (s_index.empty());

@@ -10,7 +10,7 @@
 class PhoneBook
 {
 	private:
-		Contact contact[9];
+		Contact contact[8];
 		int index;
 		int size;
 	public:
