@@ -26,19 +26,23 @@ std::string PhoneBook::get_return(std::string text)
 	return res;
 }
 
-void PhoneBook::PutStrWithDot(std::string text)
-{
-    if (text.length() >= 10)
-        std::cout << "|" << std::setw(10) << text.substr(0, 9) << ".";
-    else
-        std::cout << "|" << std::setw(10) << text.substr(0, 10);
-}
+	void PhoneBook::PutStrWithDot(std::string text)
+	{
+		std::cout << "|";
+		if (text.length() >= 10)
+		{
+			std::cout << std::setw(9) << std::right << text.substr(0, 9) << ".";
+		}
+		else
+			std::cout << std::setw(10) << std::right << text.substr(0, 10);
+	}
+
 
 void PhoneBook::WritePerson(Contact contact)
 {
-	std::cout   << "|-------------------All Info Display----------------------|\n"
-	       		<< "|First Name| Last Name|  Nickname| DarkSecret|  Number     |\n"
-	       		<< "|---------------------------------------------------------|\n"
+	std::cout   << "|-------------------All Info Display-------------------|\n"
+	       		<< "|First Name| Last Name|  Nickname|DarkSecret|  Number  |\n"
+	       		<< "|------------------------------------------------------|\n"
 				<< std::endl;
 	PutStrWithDot(contact.getName());
 	PutStrWithDot(contact.getSurname());
@@ -47,7 +51,7 @@ void PhoneBook::WritePerson(Contact contact)
 	std::ostringstream oss;
 	oss << contact.getPhonenumber();
 	PutStrWithDot(oss.str());
-	std::cout << std::endl;
+	std::cout << "|" << std::endl;
 }
 
 int PhoneBook::add()
@@ -76,8 +80,8 @@ int PhoneBook::add()
 	this->contact[this->index].setNickname(input[2]);
 	this->contact[this->index].setDarkSecret(input[3]);
 	this->contact[this->index].setPhonenumber(num);
-	this->index = (this->index + 1) % 8;
-	if (this->size < 8)
+	this->index = (this->index + 1) % 9;
+	if (this->size <= 9)
 		size++;
 	return 0;
 }
@@ -86,7 +90,6 @@ int PhoneBook::search()
 {
 	std::string s_index;
 	int i_index;
-
 	if(!this->size)
 	{
 		std::cout << "There is no one here, you need to add someone!! " << std::endl;
@@ -103,7 +106,6 @@ int PhoneBook::search()
 		PutStrWithDot(this->contact[i].getNickname());
 		std::cout << "|" << std::endl;
     }
-
 	do
 	{
 		std::cout << "İndex |-> ";
@@ -113,7 +115,7 @@ int PhoneBook::search()
 		std::cout << std::endl;
 		if(s_index.empty())
 			std::cout <<  "It can not null. Try again!! " << std::endl;
-		else if (i_index >= this->size || iss.fail())
+		else if (i_index >= this->size || i_index < 0 || iss.fail())
 			std::cout << "there is no this index or it is not number" << std::endl;
 		else
 		{
