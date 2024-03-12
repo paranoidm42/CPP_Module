@@ -2,7 +2,7 @@
 #define HARL
 
 #include <iostream>
-#include <algorithm>
+#include <cstring>
 
 class Harl
 {
