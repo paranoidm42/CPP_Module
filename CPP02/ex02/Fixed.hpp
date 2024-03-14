@@ -22,7 +22,7 @@ public:
     float toFloat() const;
     int toInt() const;
 
-    // Aşırı yüklenmiş operatörler
+
     bool operator>(const Fixed &other) const;
     bool operator<(const Fixed &other) const;
     bool operator>=(const Fixed &other) const;
@@ -35,10 +35,11 @@ public:
     Fixed operator*(const Fixed &other) const;
     Fixed operator/(const Fixed &other) const;
 
-    Fixed &operator++();    // Prefix increment
-    Fixed operator++(int);  // Postfix increment
+    Fixed &operator++();    
+    Fixed operator++(int);  
+    Fixed &operator--();    
+    Fixed operator--(int); 
 
-    // Statik üye işlevler
     static Fixed &min(Fixed &a, Fixed &b);
     static const Fixed &min(const Fixed &a, const Fixed &b);
     static Fixed &max(Fixed &a, Fixed &b);
