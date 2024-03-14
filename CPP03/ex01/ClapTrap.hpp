@@ -27,8 +27,12 @@ class ClapTrap
 		int getHitP();
 		int getEnergyP();
 		int	getAttackP();
+		std::string getName();
 
-		void setAttackP(const int& value);
+		void setEnergyP(int value);
+		void setAttackP(int value);
+		void setHitP(int value);
+		void setName(std::string name);
 
 };
 

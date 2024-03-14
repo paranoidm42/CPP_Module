@@ -84,5 +84,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 int ClapTrap::getHitP() {return this->_hit_point;}
 int ClapTrap::getEnergyP() {return this->_energy_point;}
 int ClapTrap::getAttackP() {return this->_attack_point;}
+std::string ClapTrap::getName() { return this->_name; }
 
-void ClapTrap::setAttackP(const int& value) { this->_attack_point = value; }
+void ClapTrap::setAttackP(int value) { this->_attack_point = value; }
+void ClapTrap::setEnergyP(int value) { this->_energy_point = value; }
+void ClapTrap::setHitP(int value) { this->_hit_point = value; }
+void ClapTrap::setName(std::string name) {this->_name = name};
