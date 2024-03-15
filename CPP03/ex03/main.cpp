@@ -13,12 +13,14 @@ int main()
 	DiamondTrap c(a);
 	std::cout << std::endl;
 
+    std::cout << "Name= " << a.getName() << " Attack P: "<<a.getAttackP() 
+        << " Energy P: "<< a.getEnergyP() << " Hit P:" << a.getHitP() << std::endl << std::endl;
 	a.highFivesGuys();
 	a.guardGate();
 	a.whoAmI();
-	a.attack("some super random dude");
+	a.attack("MARVIN");
 	b.whoAmI();
-	b.attack("someguy");
+	b.attack("ARTHUR");
 	c.whoAmI();
 	std::cout << std::endl;
 	return (0);

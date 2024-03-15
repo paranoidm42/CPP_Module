@@ -7,7 +7,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 }
 
 
-ScavTrap::ScavTrap(std::string name) 
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {   
     std::cout << "ScavTrap Constructor initialized" << std::endl;
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap(std::string name)
     this->setHitP(100);
 }
 
-ScavTrap::ScavTrap( ScavTrap const &other) :    ClapTrap(other)
+ScavTrap::ScavTrap( ScavTrap const &other) :   ClapTrap(other)
 {
     *this = other;
 }

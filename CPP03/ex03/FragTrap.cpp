@@ -6,7 +6,7 @@ FragTrap::FragTrap(): ClapTrap()
 
 }
 
-FragTrap::FragTrap(std::string name) 
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {   
     std::cout << "FragTrap Constructor initialized" << std::endl;
 

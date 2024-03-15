@@ -6,7 +6,7 @@ FragTrap::FragTrap(): ClapTrap()
 
 }
 
-FragTrap::FragTrap(std::string name) 
+FragTrap::FragTrap(std::string name): ClapTrap(name)
 {   
     std::cout << "FragTrap Constructor initialized" << std::endl;
 
@@ -16,7 +16,7 @@ FragTrap::FragTrap(std::string name)
     this->setHitP(100);
 }
 
-FragTrap::FragTrap( FragTrap const &other) :    ClapTrap(other)
+FragTrap::FragTrap( FragTrap const &other) : ClapTrap(other)
 {
     *this = other;
 }
