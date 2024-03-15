@@ -1,12 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(/* args */)
+ClapTrap::ClapTrap()
 {
 	_attack_point = 0;
 	_energy_point = 10;
 	_hit_point = 10;
 	std::cout << "ClapTrap initialized" << std::endl;
-
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name)

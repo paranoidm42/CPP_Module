@@ -1,5 +1,12 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(): ClapTrap()
+{
+    std::cout << "ScavTrap Default Constructor initialized" << std::endl;
+
+}
+
+
 ScavTrap::ScavTrap(std::string name) 
 {   
     std::cout << "ScavTrap Constructor initialized" << std::endl;

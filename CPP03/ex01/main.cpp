@@ -1,11 +1,6 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-void get(ScavTrap ct2)
-{
-    std::cout << "Name= " << ct2.getName() << " Attack P: "<<ct2.getAttackP() 
-        << " Energy P: "<< ct2.getEnergyP() << " Hit P:" << ct2.getHitP() << std::endl;
-}
 
 int main()
 {
@@ -21,7 +16,7 @@ int main()
 
 	ct2.ClapTrap::attack("Marvin");
 
-    get(ct2);
-    get(ct3);
+	std::cout << "Name= " << ct2.getName() << " Attack P: "<<ct2.getAttackP() 
+    	<< " Energy P: "<< ct2.getEnergyP() << " Hit P:" << ct2.getHitP() << std::endl;
 
 }

@@ -1,7 +1,8 @@
 NAME	= main
 
 CC		= c++ -std=c++98
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra  -Wno-shadow -Wshadow
+
 
 SOURCES	= $(wildcard *.cpp)
 

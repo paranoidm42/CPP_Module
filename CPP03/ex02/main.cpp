@@ -1,12 +1,6 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-void get(FragTrap ct2)
-{
-    std::cout << "Name= " << ct2.getName() << " Attack P: "<<ct2.getAttackP() 
-        << " Energy P: "<< ct2.getEnergyP() << " Hit P:" << ct2.getHitP() << std::endl;
-}
-
 int main()
 {
 	ClapTrap ct1("Marvin");
@@ -19,8 +13,7 @@ int main()
 	ct2.takeDamage(ct1.getAttackP());
 	ct2.highFivesGuys();
 
-
-    get(ct2);
-    get(ct3);
+    std::cout << "Name= " << ct2.getName() << " Attack P: "<<ct2.getAttackP() 
+        << " Energy P: "<< ct2.getEnergyP() << " Hit P:" << ct2.getHitP() << std::endl;
 
 }
