@@ -8,7 +8,7 @@ Dog::Dog()
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor const init." << std::endl;
+	std::cout << "Dog destructor init." << std::endl;
 
 }
 Dog::Dog(const Dog& other)

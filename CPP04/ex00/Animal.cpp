@@ -7,7 +7,7 @@ Animal::Animal()
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructor const init." << std::endl;
+	std::cout << "Animal destructor init." << std::endl;
 }
 Animal::Animal(const Animal& other)
 {

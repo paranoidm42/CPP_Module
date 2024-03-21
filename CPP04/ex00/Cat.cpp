@@ -8,7 +8,7 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor const init." << std::endl;
+	std::cout << "Cat destructor init." << std::endl;
 
 }
 Cat::Cat(const Cat& other)

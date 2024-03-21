@@ -12,7 +12,7 @@ class Animal
 		Animal();
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
-		~Animal();
+		virtual ~Animal();
 
 		void setType(std::string name_type);
 		const std::string& getType() const;
