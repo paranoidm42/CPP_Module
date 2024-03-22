@@ -3,6 +3,8 @@
 Brain::Brain()
 {
 	std::cout << "Brain const init." << std::endl;
+	for (int i = 0; i < 100; i++)
+		ideas[i] = "";
 }
 
 Brain::~Brain()
@@ -33,3 +35,12 @@ Brain& Brain::operator=(const Brain& other)
 	return *this;
 }
 
+std::string Brain::getIdea(int i) const
+{
+	return this->ideas[i];
+}
+
+void Brain::setIdea(int i, std::string idea)
+{
+	this->ideas[i] = idea;
+}

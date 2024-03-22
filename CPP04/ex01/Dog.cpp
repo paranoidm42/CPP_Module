@@ -17,7 +17,7 @@ Dog::~Dog()
 Dog::Dog(const Dog& other): Animal(other)
 {
 	std::cout << "Dog copy const init." << std::endl;
-	this->brain = other.brain;
+	this->brain = new Brain(*other.brain);
 	this->setType(other.getType());
 }
 Dog& Dog::operator=(const Dog& other)
@@ -27,7 +27,8 @@ Dog& Dog::operator=(const Dog& other)
 	if(this != &other)
 	{
 		Animal::operator=(other);
-		this->brain = other.brain;
+        delete this->brain;
+        this->brain = new Brain(*other.brain);
 		this->setType(other.getType());
 	}
 	return *this;

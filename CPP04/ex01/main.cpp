@@ -1,16 +1,27 @@
-#include "Cat.hpp"
 #include "Dog.hpp"
-#include "Animal.hpp"
-#include "Wrong.hpp"
-#include "Brain.hpp"
+#include "Cat.hpp"
 
-int main()
+
+int main( void )
 {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-
     delete j;
     delete i;
+
+    Dog basic;
+    {
+        Dog tmp = basic;
+    }
+
+    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+
+
+    for ( int i = 0; i < 4; i++ ) {
+        delete animals[i];
+    }
+
+   // delete *animals;
     return 0;
 }
