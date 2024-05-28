@@ -1,25 +1,16 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : _name("Default Form"),
-               _isSigned(false),
-               _requiredGradeToSign(150),
-               _requiredGradeToExecute(150) {}
+Form::Form() : _name("Default Form"), _isSigned(false),_requiredGradeToSign(150), _requiredGradeToExecute(150)
+{}
 
-Form::~Form(void) {}
+Form::~Form(void) 
+{}
 
-Form::Form(std::string name): _name(name),
-                              _isSigned(false),
-                              _requiredGradeToSign(150),
-                              _requiredGradeToExecute(150) {}
+Form::Form(std::string name): _name(name),_isSigned(false),_requiredGradeToSign(150),_requiredGradeToExecute(150) 
+{}
 
-Form::Form(std::string name,
-           int reqGtoSign,
-           int reqGtoExec) : 
-           _name(name),
-           _isSigned(false),
-           _requiredGradeToSign(reqGtoSign),
-           _requiredGradeToExecute(reqGtoExec) 
+Form::Form(std::string name, int reqGtoSign, int reqGtoExec) :  _name(name),_isSigned(false),_requiredGradeToSign(reqGtoSign),_requiredGradeToExecute(reqGtoExec) 
 {
     if (reqGtoExec < 1 || reqGtoSign < 1)
         throw GradeTooHighException();
@@ -27,9 +18,7 @@ Form::Form(std::string name,
         throw GradeTooLowException();
 }
 
-Form::Form(const Form& copy) : _name(copy.getName()),
-                               _requiredGradeToSign(getGradeToSign()),
-                               _requiredGradeToExecute(getGradeToExec()) 
+Form::Form(const Form& copy) : _name(copy.getName()),_requiredGradeToSign(getGradeToSign()),_requiredGradeToExecute(getGradeToExec()) 
 {
     *this = copy;
 }

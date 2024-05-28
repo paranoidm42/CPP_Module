@@ -24,5 +24,4 @@ int main()
         b.signForm(f);
         std::cout << f;
     }
-
 }
