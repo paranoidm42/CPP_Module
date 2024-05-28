@@ -2,7 +2,8 @@
 
 #include <string>
 
-class WrongAnimal{
+class WrongAnimal
+{
 	protected:
 		std::string type;
 	public:
@@ -13,14 +14,4 @@ class WrongAnimal{
 
 		void makeSound() const;
 		std::string getType() const;
-};
-
-class WrongCat : public WrongAnimal{
-	public:
-		WrongCat();
-		WrongCat(WrongCat const &a);
-		WrongCat &operator=(WrongCat const &a);
-		~WrongCat();
-
-		void makeSound() const;
 };
