@@ -16,5 +16,13 @@ class ScalarConverter
         // Statik fonksiyonlar olacağı için nesne oluşturmamalı.        
 
     public:
+        static void			convert(std::string input);
+        
+		static void			toChar(std::string input);
+		static void			toInt(std::string input);
+		static void			toFloat(std::string input);
+		static void			toDouble(std::string input);
+
+
 };
 

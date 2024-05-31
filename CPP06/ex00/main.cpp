@@ -1,9 +1,10 @@
 #include "ScalarConverter.hpp"
 
-int main(int ac, char* av[])
+int main(int ac, char **av)
 {
     if (ac == 2)
     {
+        ScalarConverter::convert(av[1]);
         return 1;
     }
     std::cout << "Error: This program accepts only 1 argument!" << std::endl;
