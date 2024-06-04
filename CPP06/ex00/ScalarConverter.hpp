@@ -4,7 +4,9 @@
 #include <exception>
 #include <cstdlib>
 #include <cctype>
+#include <iomanip>
 
+#include <limits>
 class ScalarConverter
 {
     private:
@@ -13,7 +15,6 @@ class ScalarConverter
 
         ScalarConverter &operator=(const ScalarConverter& other);
         ScalarConverter(const ScalarConverter& other);
-        // Statik fonksiyonlar olacağı için nesne oluşturmamalı.        
 
     public:
         static void			convert(std::string input);
