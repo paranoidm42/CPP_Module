@@ -1,11 +1,11 @@
-NAME	= Bureaucrat
+NAME	= serialize
 CC		= c++ -std=c++98
 CLAFGS	= -Wall -Wextra -Werror
 SRCS	= $(wildcard *.cpp)
 
 all		: $(NAME)
 
-$(NAME)	:
+$(NAME):
 	$(CC) $(CLAFGS) $(SRCS) -o $(NAME)
 
 clean	:

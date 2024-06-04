@@ -1,5 +1,5 @@
 NAME	= Form
-CC		= g++ -std=c++98
+CC		= c++ -std=c++98
 CLAFGS	= -Wall -Wextra -Werror
 SRCS	= $(wildcard *.cpp)
 
