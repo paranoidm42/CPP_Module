@@ -1,16 +1,20 @@
-NAME	= serialize
+NAME	= main
+
 CC		= c++ -std=c++98
-CLAFGS	= -Wall -Wextra -Werror
-SRCS	= $(wildcard *.cpp)
+CFLAGS	= -Wall -Werror -Wextra
+
+SOURCES	= $(wildcard *.cpp)
 
 all		: $(NAME)
 
-$(NAME):
-	$(CC) $(CLAFGS) $(SRCS) -o $(NAME)
+$(NAME)	: $(SOURCES)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(NAME)
 
 clean	:
-	rm -rf  $(NAME)
+	rm -f $(NAME)
 
 fclean	: clean
 
 re		: fclean all
+
+.PHONY: all clean fclean re
