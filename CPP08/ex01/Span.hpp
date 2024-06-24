@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <exception>
 #include <limits>
+#include <cstdlib>
+#include <ctime>
 
 class Span
 {
@@ -18,6 +20,7 @@ class Span
         Span& operator=(const Span& other);
         Span(const Span& other);
         void addNumber(int number);
+        void addNumber(int n, time_t seed);
         int shortestSpan();
         int longestSpan();
 
@@ -39,7 +42,6 @@ Span::~Span()
 {
 }
 
-
 Span& Span::operator=(const Span& other)
 {
 	if (this != &other){
@@ -55,6 +57,9 @@ Span::Span(const Span& other):_n(other._n)
 	_numbers = other._numbers;
 }
 
+
+
+
 void Span::addNumber(int number)
 {
 
@@ -64,6 +69,17 @@ void Span::addNumber(int number)
 	}
 
 	_numbers.push_back(number);
+}
+
+
+void Span::addNumber(int n, time_t seed)
+{
+    std::srand(static_cast<unsigned int>(seed));
+
+    for (int i = 0; i < n; ++i) {
+        int random_number = std::rand() % 100000 + 1;
+        addNumber(random_number);
+    }
 }
 
 std::vector<int> Span::sortVec(std::vector<int> vec)
@@ -77,21 +93,19 @@ std::vector<int> Span::sortVec(std::vector<int> vec)
 
 int Span::shortestSpan()
 {
-    if (_numbers.size() < 2) {
+    if (_numbers.size() < 2) 
         throw std::exception();
-    }
+    
 
     std::vector<int> sorted_vec = sortVec(_numbers);
-    int shortest = std::numeric_limits<int>::max();
+	int min = sorted_vec[sorted_vec.size() - 1] - sorted_vec[0];
 
-    for (std::vector<int>::size_type i = 1; i < sorted_vec.size(); ++i) 
+  	for (std::size_t i = 1; i < sorted_vec.size(); i++)
     {
-        int span = sorted_vec[i] - sorted_vec[i - 1];
-        if (span < shortest) 
-            shortest = span;
-    }
-
-    return shortest;
+		if (sorted_vec[i] - sorted_vec[i - 1] < min)
+			min = sorted_vec[i] - sorted_vec[i - 1];
+	}
+	return min;
 }
 
 int Span::longestSpan()
