@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <stack>
 #include <deque>
@@ -11,7 +13,7 @@ class MutantStack : public std::stack<T>
         MutantStack() : std::stack<T>() {}
         MutantStack(const MutantStack<T>& src) : std::stack<T>(src) {}
         ~MutantStack() {}
-        
+
         MutantStack<T>& operator=(const MutantStack<T>& rhs) 
         {
             if (this != &rhs) {
