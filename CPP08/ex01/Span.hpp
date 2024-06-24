@@ -24,23 +24,26 @@ class Span
         int shortestSpan();
         int longestSpan();
 
-        std::vector<int>& getVector();
+        void getVectorMember();
 
         std::vector<int> sortVec(std::vector<int> vec);
 
 };
 
 
-std::vector<int>& Span::getVector() { return _numbers; }
-
-Span::Span(unsigned int N) : _n(N)
+void Span::getVectorMember() 
 {
-    
+    for (unsigned long i = 0; i < _numbers.size(); i++)
+    {
+        std::cout << _numbers[i] << " " ;
+    }
+    std::cout << std::endl;
+
 }
 
-Span::~Span()
-{
-}
+Span::Span(unsigned int N) : _n(N) {   }
+
+Span::~Span() { }
 
 Span& Span::operator=(const Span& other)
 {

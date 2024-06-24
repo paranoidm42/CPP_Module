@@ -15,6 +15,7 @@ int main()
         
         std::cout << "Short: " << sp.shortestSpan() << std::endl;
         std::cout << "Long: " << sp.longestSpan() << std::endl;
+
     }
     catch(const std::exception& e)
     {
