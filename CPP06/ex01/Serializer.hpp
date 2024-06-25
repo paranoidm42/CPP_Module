@@ -11,11 +11,11 @@ struct Data
 class Serializer
 {
 	private:
-        Serializer();
-        Serializer(const Serializer& oth);
-        Serializer& operator=(const Serializer& oth);
-        ~Serializer();
+                Serializer();
+                Serializer(const Serializer& oth);
+                Serializer& operator=(const Serializer& oth);
+                ~Serializer();
 	public:
-        static uintptr_t serialize(Data *ptr);
-        static Data* deserialize(uintptr_t raw);
+                static uintptr_t serialize(Data *ptr);
+                static Data* deserialize(uintptr_t raw);
 };
