@@ -9,7 +9,6 @@ class Array {
         unsigned int n;
 
     public:
-        // Default constructor
         Array() : data(NULL), n(0) {}
 
         // Constructor with size parameter
