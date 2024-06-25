@@ -16,6 +16,9 @@ int main()
     {
         std::vector<int>::iterator x = easyfind(number, 5);
         std::cout << "Number is = " << *x << std::endl;
+
+        x = easyfind(number, 42);
+        std::cout << "Number is = " << *x << std::endl;
     }
     catch (const std::exception& e)
     {

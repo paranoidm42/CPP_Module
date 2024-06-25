@@ -35,5 +35,18 @@ int main()
         std::cerr << "There is an error!!" << std::endl;
     }
 
+    try
+    {
+        Span sp = Span(5);
+        sp.addNumber(6,100);
+
+        std::cout << "Short: " << sp.shortestSpan() << std::endl;
+        std::cout << "Long: " << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "There is an error!!" << std::endl;
+    }
+
     return 0;
 }
