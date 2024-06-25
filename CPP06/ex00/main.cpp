@@ -2,18 +2,18 @@
 
 int main(int ac, char **av)
 {
-    if (ac == 2)
+    try
     {
-        try
+        if (ac == 2)
         {
-            ScalarConverter::convert(av[1]);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-        return 1;
+            ScalarConverter::convert(av[1]);   
+            return 1;
+        }   
     }
+    catch(std::exception& e)
+    {
+		std::cout << "impossible" << std::endl;
+    } 
     std::cout << "Error: This program accepts only 1 argument!" << std::endl;
     return 0;
 }

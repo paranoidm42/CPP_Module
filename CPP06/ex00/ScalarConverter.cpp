@@ -90,14 +90,17 @@ void	ScalarConverter::toInt(std::string input)
 	std::cout << "int: ";
 	try
 	{
-		if (input.length() == 1 && std::isprint(input[0]))
-			std::cout << static_cast<int>(input[0]) << std::endl;
+		if(std::isdigit(input[0]))
+			std::cout << std::atoi(input.c_str());
+		else if (input.length() == 1 && std::isprint(input[0]))
+			std::cout << static_cast<int>(input[0]);
 		else
-			std::cout << std::atoi(input.c_str()) << std::endl;
+			std::cout << std::atoi(input.c_str());
+		std::cout << std::endl;
+
 	}
 	catch (std::exception &e)
 	{
-
 		std::cout << "impossible" << std::endl;
 	}
 }
@@ -107,10 +110,13 @@ void ScalarConverter::toFloat(std::string input)
 	std::cout << "float: ";
 	try
 	{
-		if (input.length() == 1 && std::isprint(input[0]))
-			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(input[0])<< "f" << std::endl;
+		if(std::isdigit(input[0]))
+			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(std::atof(input.c_str())) << "f";
+		else if (input.length() == 1 && std::isprint(input[0]))
+			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(input[0])<< "f";
 		else
-			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(std::atof(input.c_str())) << "f" <<  std::endl;
+			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(std::atof(input.c_str())) << "f";
+		std::cout << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -123,10 +129,15 @@ void ScalarConverter::toDouble(std::string input)
 	std::cout << "double: ";
 	try
 	{
-		if (input.length() == 1 && std::isprint(input[0]))
-			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(input[0]) << std::endl;
+		if(std::isdigit(input[0]))
+			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(std::atof(input.c_str()));
+		else if (input.length() == 1 && std::isprint(input[0]))
+			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(input[0]);
 		else
-			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(std::atof(input.c_str())) << std::endl;
+			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(std::atof(input.c_str()));
+
+
+		std::cout << std::endl;
 	}
 	catch (std::exception &e)
 	{
