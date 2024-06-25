@@ -32,7 +32,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << "There is an error!!" << '\n';
+        std::cerr << "There is an error!!" << std::endl;
     }
 
     return 0;

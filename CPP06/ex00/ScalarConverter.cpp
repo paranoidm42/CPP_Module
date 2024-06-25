@@ -90,14 +90,15 @@ void	ScalarConverter::toInt(std::string input)
 	std::cout << "int: ";
 	try
 	{
-		std::cout << static_cast<int>(std::atoi(input.c_str())) << std::endl;
-	}
-	catch (std::exception &e)
-	{
 		if (input.length() == 1 && std::isprint(input[0]))
 			std::cout << static_cast<int>(input[0]) << std::endl;
 		else
-			std::cout << "impossible" << std::endl;
+			std::cout << std::atoi(input.c_str()) << std::endl;
+	}
+	catch (std::exception &e)
+	{
+
+		std::cout << "impossible" << std::endl;
 	}
 }
 
@@ -106,14 +107,14 @@ void ScalarConverter::toFloat(std::string input)
 	std::cout << "float: ";
 	try
 	{
-		std::cout << std::fixed << std::setprecision(1) << static_cast<float>(std::atof(input.c_str())) << "f" <<  std::endl;
-	}
-	catch (std::exception &e)
-	{
 		if (input.length() == 1 && std::isprint(input[0]))
 			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(input[0])<< "f" << std::endl;
 		else
-			std::cout << "impossible" << std::endl;
+			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(std::atof(input.c_str())) << "f" <<  std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "impossible" << std::endl;
 	}
 }
 
@@ -122,13 +123,13 @@ void ScalarConverter::toDouble(std::string input)
 	std::cout << "double: ";
 	try
 	{
-		std::cout << std::fixed << std::setprecision(1) << static_cast<double>(std::atof(input.c_str())) << std::endl;
-	}
-	catch (std::exception &e)
-	{
 		if (input.length() == 1 && std::isprint(input[0]))
 			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(input[0]) << std::endl;
 		else
-			std::cout << "impossible" << std::endl;
+			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(std::atof(input.c_str())) << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "impossible" << std::endl;
 	}
 }
