@@ -1,5 +1,6 @@
 #include "ScalarConverter.hpp"
 
+
 ScalarConverter::ScalarConverter(/* args */)
 {
     std::cout << "Wake up Scaler!!! NEVER!!" << std::endl;
