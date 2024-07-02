@@ -1,26 +1,34 @@
 #include "PmergeMe.hpp"
 
 
-PmergeMe::PmergeMe(void){}
+PmergeMe::PmergeMe() {}
 
-PmergeMe::~PmergeMe(void){}
+PmergeMe::~PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe& copy) {*this = copy;}
-
-PmergeMe&	PmergeMe::operator=(const PmergeMe& other)
+PmergeMe& PmergeMe::operator=(const PmergeMe& other) 
 {
-	if (this != &other)
-	{
-		this->_vector = other._vector;
-		this->_deque = other._deque;
-	}
-	return (*this);
+    if (this != &other) {
+        this->_vector = other._vector;
+        this->_deque = other._deque;
+    }
+    return *this;
+}
+
+PmergeMe::PmergeMe(const PmergeMe& other)
+{
+    this->_vector = other._vector;
+    this->_deque = other._deque;
 }
 
 
-// ----------------------CANON UP ------------
 
-void PmergeMe::printVector() {
+
+//**------*--- */
+
+
+
+void PmergeMe::printVector() 
+{
     for (std::vector<int>::iterator it = _vector.begin(); it != _vector.end() && it != _vector.begin() + 30; ++it) {
         std::cout << "[" << *it << "]";
     }
@@ -30,7 +38,8 @@ void PmergeMe::printVector() {
     std::cout << std::endl;
 }
 
-void PmergeMe::printDeque() {
+void PmergeMe::printDeque()
+ {
     for (std::deque<int>::iterator it = _deque.begin(); it != _deque.end() && it != _deque.begin() + 30; ++it) {
         std::cout << "[" << *it << "]";
     }
@@ -40,7 +49,8 @@ void PmergeMe::printDeque() {
     std::cout << std::endl;
 }
 
-void PmergeMe::isalnum(const std::string& str) {
+void PmergeMe::isalnum(const std::string& str)
+ {
     if (str.empty() || str[0] == '-') {
         throw std::invalid_argument("Error: not a positive number.");
     }
@@ -54,7 +64,8 @@ void PmergeMe::isalnum(const std::string& str) {
     }
 }
 
-void PmergeMe::sort(char **arr) {
+void PmergeMe::sort(char **arr) 
+{
     clock_t start, end;
     double Vtime, Dtime;
 
@@ -91,7 +102,8 @@ void PmergeMe::sort(char **arr) {
     std::cout << "Time to process a range of " << _deque.size() << " elements with std::deque: " << Dtime << " ms\n";
 }
 
-void PmergeMe::mergeInsertSort(std::vector<int>& vec) {
+void PmergeMe::mergeInsertSort(std::vector<int>& vec) 
+{
     if (vec.size() <= 1) return;
     std::vector<int> left(vec.begin(), vec.begin() + vec.size() / 2);
     std::vector<int> right(vec.begin() + vec.size() / 2, vec.end());
@@ -100,7 +112,8 @@ void PmergeMe::mergeInsertSort(std::vector<int>& vec) {
     std::merge(left.begin(), left.end(), right.begin(), right.end(), vec.begin());
 }
 
-void PmergeMe::mergeInsertSort(std::deque<int>& deq) {
+void PmergeMe::mergeInsertSort(std::deque<int>& deq) 
+{
     if (deq.size() <= 1) return;
     std::deque<int> left(deq.begin(), deq.begin() + deq.size() / 2);
     std::deque<int> right(deq.begin() + deq.size() / 2, deq.end());

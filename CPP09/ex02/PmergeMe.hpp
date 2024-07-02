@@ -6,8 +6,8 @@
 #include <iostream>
 #include <sstream>
 #include <ctime>
-#include <iomanip>
 #include <algorithm>
+#include <iomanip>
 
 class PmergeMe 
 {
@@ -20,12 +20,12 @@ class PmergeMe
         void isalnum(const std::string& str);
 
     public:
-        PmergeMe(void);
-        PmergeMe(const PmergeMe & origin);
-        PmergeMe& operator=(const PmergeMe & origin);
-        ~PmergeMe(void);
+        PmergeMe();
+        ~PmergeMe();
+        PmergeMe& operator=(const PmergeMe& other);
+        PmergeMe(const PmergeMe& other);
 
-        
+
         void sort(char **arr);
         void printVector();
         void printDeque();
