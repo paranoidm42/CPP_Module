@@ -1,5 +1,5 @@
-#ifndef PMERGEME_H
-#define PMERGEME_H
+#ifndef PMERGEME_HPP
+#define PMERGEME_HPP
 
 #include <vector>
 #include <deque>
@@ -8,6 +8,9 @@
 #include <ctime>
 #include <algorithm>
 #include <iomanip>
+#include <stdexcept>
+#include <cstdlib>
+#include <cstddef>
 
 class PmergeMe 
 {
@@ -17,6 +20,8 @@ class PmergeMe
 
         void mergeInsertSort(std::vector<int>& vec);
         void mergeInsertSort(std::deque<int>& deq);
+        void insertionSort(std::vector<int>& vec);
+        void insertionSort(std::deque<int>& deq);
         void isalnum(const std::string& str);
 
     public:
@@ -24,7 +29,6 @@ class PmergeMe
         ~PmergeMe();
         PmergeMe& operator=(const PmergeMe& other);
         PmergeMe(const PmergeMe& other);
-
 
         void sort(char **arr);
         void printVector();
